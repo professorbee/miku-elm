@@ -28,7 +28,7 @@ type Msg
   | GotGif (Result Http.Error String)
 
 update : Msg -> Model -> (Model, Cmd Msg)
-update msg model =
+update msg _ =
   case msg of
     MorePlease ->
       (Loading, getRandomCatGif)
@@ -42,7 +42,7 @@ update msg model =
           (Failure, Cmd.none)
 
 subscriptions : Model -> Sub Msg
-subscriptions model =
+subscriptions _ =
   Sub.none
 
 view : Model -> Html Msg
@@ -55,7 +55,7 @@ viewGif model =
   case model of
     Failure ->
       div []
-        [ text "I could not load a random cat for some reason. "
+        [ text "I could not load a random miku for some reason. "
         , button [ onClick MorePlease ] [ text "Try Again!" ]
         ]
 

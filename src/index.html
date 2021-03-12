@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="/icon.png">
+    <meta property="og:title" content="Plush Miku!">
+    <meta property="og:description" content="Plush Miku.">
+    <meta property="og:image" content="/icon.png">
+    <meta property="theme-color" content="#86CECB">
+    <style>
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            max-height: 500px;
+        }
+
+        h1 {
+            text-align: center;
+            color: whitesmoke;
+        }
+
+        hr.solid {
+            border-top: 3px solid #86cecb;
+        }
+
+        body {
+            background-color: #373b3e;
+        }
+
+        .text-center {
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+    <title>Plush Miku!</title>
+</head>
+<body>
+    <h1>Hello there!</h1>
+    <hr class="solid">
+    <div id="elm-app-is-loaded-here"></div>
+    
+    <script src="elm.js"></script>
+    <script>
+      var app = Elm.Main.init({
+        node: document.getElementById("elm-app-is-loaded-here")
+      });      
+    </script>
+</body>
+</html>

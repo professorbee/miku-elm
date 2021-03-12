@@ -21,7 +21,7 @@ type Model
 
 init : () -> (Model, Cmd Msg)
 init _ =
-  (Loading, getRandomCatGif)
+  (Loading, getRandomMikuGif)
 
 type Msg
   = MorePlease
@@ -31,7 +31,7 @@ update : Msg -> Model -> (Model, Cmd Msg)
 update msg _ =
   case msg of
     MorePlease ->
-      (Loading, getRandomCatGif)
+      (Loading, getRandomMikuGif)
 
     GotGif result ->
       case result of
@@ -64,12 +64,12 @@ viewGif model =
 
     Success url ->
       div []
-        [ img [ src url ] [],
+        [ img [ src url, alt "Miku." ] [],
         div [ class "text-center"] [button [ onClick MorePlease] [ text "More Please!" ]]
         ]
 
-getRandomCatGif : Cmd Msg
-getRandomCatGif =
+getRandomMikuGif : Cmd Msg
+getRandomMikuGif =
   Http.get
     { url = "https://plushmiku.xyz/api/random"
     , expect = Http.expectJson GotGif gifDecoder
